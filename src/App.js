@@ -3,11 +3,20 @@ import './App.css';
 
 import Form from "./components/Form";
 
+const API_KEY = "22988db4db7ff4547a1534306215b6e0";
+
 class App extends Component {
-  getRecipe = (e) => {
+
+  getRecipe = async (e) => {
+    
     const recipeName = e.target.elements.recipeName.value;
     e.preventDefault();
-    console.log(recipeName);
+    const api_call = await fetch(`https://cors-anywhere.herokuapp.com/http://food2fork.com/api/search?key=${API_KEY}&q=${recipeName}&count=10`);
+    
+    const data = await api_call.json();
+
+    console.log(data);
+  
   }
   render() {
     return (
