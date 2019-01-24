@@ -1,3 +1,10 @@
 import React from 'react';
 
-const Form = 
+const Form = () => (
+  <form>
+    <input type="text" ></input>
+    <button>Search</button>
+  </form>
+);
+
+export default Form;
