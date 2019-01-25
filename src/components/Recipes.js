@@ -2,9 +2,16 @@ import React from 'react';
 
 import { Link } from "react-router-dom";
 
-const Recipes = () => (
+const Recipes = props => (
  <div> 
-   Recipes!
+   {props.recipes.map(recipe => {
+  return (
+    <div key={recipe.recipe_id}>
+      <img src={recipe.image_url} alt={recipe.title} />
+      <p>{recipe.title}</p>
+    </div>
+  );
+})}
  </div>
 );
 
