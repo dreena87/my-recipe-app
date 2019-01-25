@@ -7,6 +7,11 @@ const API_KEY = "22988db4db7ff4547a1534306215b6e0";
 
 class App extends Component {
 
+  state = {
+    recipes: []
+  }
+  
+
   getRecipe = async (e) => {
     
     const recipeName = e.target.elements.recipeName.value;
@@ -15,9 +20,12 @@ class App extends Component {
     
     const data = await api_call.json();
 
-    console.log(data);
+    this.setState({recipes: data.recipes});
+
+    console.log(this.state.recipes);
   
   }
+
   render() {
     return (
       <div className="App">
