@@ -33,6 +33,9 @@ class App extends Component {
           <h1 className="App-title">Recipe Search</h1>
         </header>
         <Form getRecipe={this.getRecipe} />
+        {this.state.recipes.map((Recipe) => {
+          return <p>{Recipe.title}</p>
+        })}
       </div>
     );
   }
