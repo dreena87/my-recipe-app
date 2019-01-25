@@ -1,19 +1,28 @@
-import React from 'react';
+import React from "react";
 
 import { Link } from "react-router-dom";
 
 const Recipes = props => (
- <div> 
-   {props.recipes.map(recipe => {
-  return (
-    <div key={recipe.recipe_id}>
-      <img src={recipe.image_url} alt={recipe.title} />
-      <p>{recipe.title}</p>
+  <div className="container">
+    <div className="row">
+      {props.recipes.map(recipe => {
+        return (
+          <div className="col-md-4">
+            <div className="recipe__box">
+              <img
+                className="recipe__box-img"
+                src={rec.img_url}
+                alt={recipe.title}
+              />
+              <div className="recipe__text">
+              
+              </div>
+            </div>
+          </div>
+        );
+      })}
     </div>
-  );
-})}
- </div>
+  </div>
 );
 
 export default Recipes;
-
